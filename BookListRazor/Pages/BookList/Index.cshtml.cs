@@ -16,6 +16,7 @@ namespace BookListRazor.BookList
         {
             _db = db;
         }
+        // IEnumerable<Book> is basically the same as List<Book> here! (Think of IEnumerable as a Base class)
         public IEnumerable<Book> Books { get; set;}
         public async Task OnGet()
         {

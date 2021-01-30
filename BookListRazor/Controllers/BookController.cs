@@ -8,7 +8,9 @@ using Microsoft.EntityFrameworkCore;
 
 namespace BookListRazor.Controllers
 {
+    // Defines the route path
     [Route("api/Book")]
+    // Used to indicate that this class is to be used as a Controller/Route Handlers
     [ApiController]
     public class BookController : Controller
     {
@@ -19,12 +21,14 @@ namespace BookListRazor.Controllers
             _db = db;
         }
 
+        // Get Route/Handler
         [HttpGet]
         public async Task<IActionResult> GetAll()
         {
             return Json(new { data = await _db.Book.ToListAsync() });
         }
 
+        // Delete Route Handler
         [HttpDelete]
         public async Task<IActionResult> Delete(int id)
         {

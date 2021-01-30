@@ -21,7 +21,6 @@ namespace BookListRazor.Pages.BookList
         public async Task OnGet(int id)
         {
             Book = await _db.Book.FindAsync(id);
-            Console.WriteLine(Book);
         }
         public async Task<IActionResult> OnPost()
         {

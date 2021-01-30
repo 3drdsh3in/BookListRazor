@@ -16,6 +16,8 @@ namespace BookListRazor.Pages.BookList
         {
             _db = db;
         }
+        // Need to use 'BindProperty' to provide the Create.cshtml view with the
+        // corresponding 'Book' data. (It automatically binds the browser data to the controller action parameter)
         [BindProperty]
         public Book Book { get; set; }
         public void OnGet()
